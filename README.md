@@ -12,3 +12,6 @@ and for each track a line with
 If end-timestamp is not known, it will fetch the start timestamp of the following track
 
 Requires ffmpeg on host system
+
+## Example:
+$ python cutlister.py --cutlist example.cutlist --input example_large_file.mp3 --output example_output_directory --verbose --dry-run
