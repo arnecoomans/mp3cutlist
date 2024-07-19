@@ -46,6 +46,8 @@ class Cutlist:
         break
     ''' Split tracklist line into snippets '''
     split_line = line.split(delimiter)
+    print(delimiter)
+    print(split_line)
     ''' Snippet cleanup '''
     line = []
     for snippet in split_line:
@@ -73,6 +75,12 @@ class Cutlist:
         ''' Find track title '''
         if len(line) >= i+1:
           track['track_title'] = line[i+1]
+      elif snippet.count(':') == 1:
+        ''' Find end cue '''
+        track['start_cue'] = '00:' + snippet
+        ''' Find track title '''
+        if len(line) >= i+1:
+          track['track_title'] = line[i+1]
       i += 1
     ''' Store tracklist in tracklist dictionary 
         If track numbers are supplied, use track numbers, else use list length + 1
@@ -82,6 +90,7 @@ class Cutlist:
       self.tracklist[track_number] = track
     else:
       self.tracklist[len(self.tracklist)+1] = track
+    print(track)
 
   ''' Helpers '''      
   def get_sec(self, time_str):
