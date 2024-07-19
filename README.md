@@ -15,3 +15,7 @@ Requires ffmpeg on host system
 
 ## Example:
 $ python cutlister.py --cutlist example.cutlist --input example_large_file.mp3 --output example_output_directory --verbose --dry-run
+
+## Still to improve
+- Add checks if files exist
+- Add example cutlist file
